@@ -30,6 +30,15 @@
   --shadow-glow: 0 0 40px rgba(212, 160, 23, 0.25);
 }
 
+/* ---- Language Toggle Display Rules ---- */
+body.lang-en .lang-zh {
+  display: none !important;
+}
+
+body.lang-zh .lang-en {
+  display: none !important;
+}
+
 /* ---- Reset & Base ---- */
 *,
 *::before,
@@ -166,6 +175,29 @@ img {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+.lang-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+}
+
+.lang-toggle:hover {
+  background: rgba(212, 160, 23, 0.15);
+  border-color: rgba(212, 160, 23, 0.3);
+  color: var(--gold);
 }
 
 .nav-toggle {

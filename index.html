@@ -16,6 +16,14 @@
 </head>
 
 <body>
+  <!-- Default language is English. We add lang-en class to body -->
+  <script>
+    // Self-executing script to prevent flash of wrong language on load
+    (function () {
+      const savedLang = localStorage.getItem('gala-lang') || 'en';
+      document.body.classList.add('lang-' + savedLang);
+    })();
+  </script>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
@@ -25,15 +33,35 @@
         <span class="logo-en">2026</span>
       </div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">首页 Home</a></li>
-        <li><a href="#about">关于 About</a></li>
-        <li><a href="#acts">节目 Acts</a></li>
-        <li><a href="#gallery">相册 Gallery</a></li>
+        <li><a href="#home">
+            <span class="lang-zh">首页</span>
+            <span class="lang-en">Home</span>
+          </a></li>
+        <li><a href="#about">
+            <span class="lang-zh">关于</span>
+            <span class="lang-en">About</span>
+          </a></li>
+        <li><a href="#acts">
+            <span class="lang-zh">节目</span>
+            <span class="lang-en">Acts</span>
+          </a></li>
+        <li><a href="#gallery">
+            <span class="lang-zh">相册</span>
+            <span class="lang-en">Gallery</span>
+          </a></li>
         <li><a href="#tickets" class="nav-ticket-btn"
-            style="color: var(--white); background: var(--red); padding: 6px 16px; border-radius: 20px; font-weight: 600;">购票
-            Tickets</a></li>
+            style="color: var(--white); background: var(--red); padding: 6px 16px; border-radius: 20px; font-weight: 600;">
+            <span class="lang-zh">购票</span>
+            <span class="lang-en">Tickets</span>
+          </a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
+          <span class="lang-en text-visible">EN/中</span>
+          <span class="lang-zh" style="display: none;">中/EN</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+      </div>
     </div>
   </nav>
 
@@ -51,35 +79,49 @@
       <div class="particles" id="particles" aria-hidden="true"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge">农历丙午年 · Year of the Horse</div>
+      <div class="hero-badge">
+        <span class="lang-zh">农历丙午年</span>
+        <span class="lang-en">Year of the Horse</span>
+      </div>
       <h1 class="hero-title">
         <span class="title-zh">马年新春演出</span>
         <span class="title-divider">✦</span>
         <span class="title-en">New Year Gala</span>
       </h1>
       <div class="hero-year">2026</div>
-      <p class="hero-subtitle">A spectacular celebration of tradition, artistry, and the vibrant spirit of Chinese New
-        Year — February 7–8, 2026</p>
+      <p class="hero-subtitle">
+        <span class="lang-zh">这是一场传统、艺术与马年新春活力的盛大庆典 — 2026年2月7日至8日</span>
+        <span class="lang-en">A spectacular celebration of tradition, artistry, and the vibrant spirit of Chinese New
+          Year — February 7–8, 2026</span>
+      </p>
       <div class="hero-meta">
         <div class="hero-meta-item">
           <span class="meta-icon">📅</span>
-          <span>Feb 7 – 8, 2026</span>
+          <span class="lang-zh">2026年2月7日 – 8日</span>
+          <span class="lang-en">Feb 7 – 8, 2026</span>
         </div>
         <div class="hero-meta-item">
           <span class="meta-icon">🎭</span>
-          <span>Live Performance</span>
+          <span class="lang-zh">现场演出</span>
+          <span class="lang-en">Live Performance</span>
         </div>
         <div class="hero-meta-item">
           <span class="meta-icon">🐴</span>
-          <span>马年 Horse Year</span>
+          <span class="lang-zh">马年</span>
+          <span class="lang-en">Horse Year</span>
         </div>
       </div>
       <div class="hero-actions"
         style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fade-up 0.8s ease 0.5s both;">
         <a href="#acts" class="cta-btn"
-          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); box-shadow: none;">Explore
-          Acts ↓</a>
-        <a href="#tickets" class="cta-btn">Purchase Tickets 🎟️</a>
+          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); box-shadow: none;">
+          <span class="lang-zh">探索节目 ↓</span>
+          <span class="lang-en">Explore Acts ↓</span>
+        </a>
+        <a href="#tickets" class="cta-btn">
+          <span class="lang-zh">购买门票 🎟️</span>
+          <span class="lang-en">Purchase Tickets 🎟️</span>
+        </a>
       </div>
     </div>
     <div class="scroll-indicator" aria-hidden="true">
@@ -91,34 +133,67 @@
   <section class="about-section" id="about">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">关于演出</div>
-        <h2 class="section-title">About the Gala</h2>
-        <p class="section-subtitle">A breathtaking evening of traditional Chinese performing arts</p>
+        <div class="section-tag">
+          <span class="lang-zh">关于演出</span>
+          <span class="lang-en">About the Gala</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-zh">关于演出</span>
+          <span class="lang-en">About the Gala</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-zh">一场令人叹为观止的中国传统表演艺术之夜</span>
+          <span class="lang-en">A breathtaking evening of traditional Chinese performing arts</span>
+        </p>
       </div>
       <div class="about-grid">
         <div class="about-card" data-delay="0">
           <div class="about-card-icon">🎬</div>
-          <h3>Professional Stage</h3>
-          <p>Performed on a professionally lit indoor theater stage adorned with majestic red curtains and a glowing
-            2026 Horse Year backdrop.</p>
+          <h3>
+            <span class="lang-zh">专业舞台</span>
+            <span class="lang-en">Professional Stage</span>
+          </h3>
+          <p>
+            <span class="lang-zh">在配有专业灯光的室内剧场舞台上演出，装饰着庄严的红色帷幕和闪耀的2026马年背景。</span>
+            <span class="lang-en">Performed on a professionally lit indoor theater stage adorned with majestic red
+              curtains and a glowing 2026 Horse Year backdrop.</span>
+          </p>
         </div>
         <div class="about-card" data-delay="100">
           <div class="about-card-icon">💃</div>
-          <h3>Traditional Dance</h3>
-          <p>Featuring beautiful choreography inspired by centuries of Chinese classical dance — flowing sleeves, fans,
-            and graceful formations.</p>
+          <h3>
+            <span class="lang-zh">传统舞蹈</span>
+            <span class="lang-en">Traditional Dance</span>
+          </h3>
+          <p>
+            <span class="lang-zh">呈现受几个世纪中国古典舞蹈启发的优美编舞 — 水袖、扇舞和优雅的阵型。</span>
+            <span class="lang-en">Featuring beautiful choreography inspired by centuries of Chinese classical dance —
+              flowing sleeves, fans, and graceful formations.</span>
+          </p>
         </div>
         <div class="about-card" data-delay="200">
           <div class="about-card-icon">🏮</div>
-          <h3>Festive Celebration</h3>
-          <p>A vibrant community celebration honoring the Year of the Horse with synchronized lantern dances and
-            spectacular ensemble performances.</p>
+          <h3>
+            <span class="lang-zh">节日庆典</span>
+            <span class="lang-en">Festive Celebration</span>
+          </h3>
+          <p>
+            <span class="lang-zh">一场充满活力的社区庆典，以引人入胜的灯笼群舞来庆祝马年。</span>
+            <span class="lang-en">A vibrant community celebration honoring the Year of the Horse with synchronized
+              lantern dances and spectacular ensemble performances.</span>
+          </p>
         </div>
         <div class="about-card" data-delay="300">
           <div class="about-card-icon">👘</div>
-          <h3>Cultural Heritage</h3>
-          <p>Costumes meticulously crafted in traditional silhouettes — flowing robes in blue, white, and red with
-            elegant water sleeves.</p>
+          <h3>
+            <span class="lang-zh">文化遗产</span>
+            <span class="lang-en">Cultural Heritage</span>
+          </h3>
+          <p>
+            <span class="lang-zh">精心制作的传统服饰 — 包括蓝、白、红色的长袍以及优雅的水袖。</span>
+            <span class="lang-en">Costumes meticulously crafted in traditional silhouettes — flowing robes in blue,
+              white, and red with elegant water sleeves.</span>
+          </p>
         </div>
       </div>
     </div>
@@ -129,25 +204,56 @@
     <div class="acts-bg-deco" aria-hidden="true"></div>
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">节目单</div>
-        <h2 class="section-title">Featured Performances</h2>
-        <p class="section-subtitle">Three spectacular acts showcasing the rich traditions of Chinese performing arts</p>
+        <div class="section-tag">
+          <span class="lang-zh">节目单</span>
+          <span class="lang-en">Featured Performances</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-zh">节目单</span>
+          <span class="lang-en">Featured Performances</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-zh">展现中国表演艺术丰富传统的三个精彩节目</span>
+          <span class="lang-en">Three spectacular acts showcasing the rich traditions of Chinese performing arts</span>
+        </p>
       </div>
       <div class="acts-timeline">
 
         <article class="act-card act-card--left" id="act1">
           <div class="act-number">01</div>
           <div class="act-content">
-            <div class="act-badge">Traditional Fusion</div>
-            <h3 class="act-title">流水长袖舞</h3>
-            <h4 class="act-subtitle">Flowing Sleeve Dance</h4>
-            <p class="act-desc">Dancers adorned in ethereal light blue and white traditional robes take the stage,
-              weaving a tapestry of graceful movements. Their long water sleeves trace arcs of silk through the air,
-              embodying the flowing rivers and gentle winds of ancient China.</p>
+            <div class="act-badge">
+              <span class="lang-zh">传统融合</span>
+              <span class="lang-en">Traditional Fusion</span>
+            </div>
+            <h3 class="act-title">
+              <span class="lang-zh">流水长袖舞</span>
+              <span class="lang-en">Flowing Sleeve Dance</span>
+            </h3>
+            <h4 class="act-subtitle">
+              <span class="lang-zh">流水长袖舞</span>
+              <span class="lang-en">Flowing Sleeve Dance</span>
+            </h4>
+            <p class="act-desc">
+              <span
+                class="lang-zh">舞者身着空灵的浅蓝色和白色传统长袍登上舞台，编织出一幅幅优美动作的画卷。她们长长的水袖在空中划出一道道丝绸的弧线，仿佛在诉说着中国古代流水的柔情与微风的轻语。</span>
+              <span class="lang-en">Dancers adorned in ethereal light blue and white traditional robes take the stage,
+                weaving a tapestry of graceful movements. Their long water sleeves trace arcs of silk through the air,
+                embodying the flowing rivers and gentle winds of ancient China.</span>
+            </p>
             <div class="act-details">
-              <span class="act-detail-tag">💙 Blue & White Costumes</span>
-              <span class="act-detail-tag">👗 Water Sleeves</span>
-              <span class="act-detail-tag">✨ Ensemble</span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">💙 蓝白服饰</span>
+                <span class="lang-en">💙 Blue & White Costumes</span>
+              </span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">👗 水袖</span>
+                <span class="lang-en">👗 Water Sleeves</span>
+              </span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">✨ 群舞</span>
+                <span class="lang-en">✨ Ensemble</span>
+              </span>
             </div>
           </div>
           <div class="act-visual act-visual--blue">
@@ -167,16 +273,38 @@
             </div>
           </div>
           <div class="act-content">
-            <div class="act-badge">Youth Ensemble</div>
-            <h3 class="act-title">红灯笼舞</h3>
-            <h4 class="act-subtitle">Red Lantern Dance</h4>
-            <p class="act-desc">A vibrant sea of red fills the stage as young performers in matching crimson costumes
-              and white leggings create stunning synchronized formations. Their traditional red lanterns glow warmly
-              under the stage lights, painting a festive canvas of joyful celebration.</p>
+            <div class="act-badge">
+              <span class="lang-zh">少儿群舞</span>
+              <span class="lang-en">Youth Ensemble</span>
+            </div>
+            <h3 class="act-title">
+              <span class="lang-zh">红灯笼舞</span>
+              <span class="lang-en">Red Lantern Dance</span>
+            </h3>
+            <h4 class="act-subtitle">
+              <span class="lang-zh">红灯笼舞</span>
+              <span class="lang-en">Red Lantern Dance</span>
+            </h4>
+            <p class="act-desc">
+              <span
+                class="lang-zh">舞台化作一片红色的海洋，身穿深红色服装和白色紧身裤的年轻表演者们排出了令人印象深刻的整齐队列。在明亮的舞台灯光下，他们手中传统的红灯笼闪耀着温暖的光芒，共同描绘出一幅充满欢快节日氛围的美丽画卷。</span>
+              <span class="lang-en">A vibrant sea of red fills the stage as young performers in matching crimson
+                costumes and white leggings create stunning synchronized formations. Their traditional red lanterns glow
+                warmly under the stage lights, painting a festive canvas of joyful celebration.</span>
+            </p>
             <div class="act-details">
-              <span class="act-detail-tag">❤️ Red Costumes</span>
-              <span class="act-detail-tag">🏮 Lanterns</span>
-              <span class="act-detail-tag">👦 Youth Performers</span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">❤️ 红色服饰</span>
+                <span class="lang-en">❤️ Red Costumes</span>
+              </span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">🏮 灯笼</span>
+                <span class="lang-en">🏮 Lanterns</span>
+              </span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">👦 少儿演出</span>
+                <span class="lang-en">👦 Youth Performers</span>
+              </span>
             </div>
           </div>
         </article>
@@ -184,16 +312,38 @@
         <article class="act-card act-card--left" id="act3">
           <div class="act-number">03</div>
           <div class="act-content">
-            <div class="act-badge">Classical Art</div>
-            <h3 class="act-title">扇舞翩翩</h3>
-            <h4 class="act-subtitle">Fan & Sleeve Dance</h4>
-            <p class="act-desc">The finale unfolds with masterful fan work — large silk fans bloom open and cascade in
-              waves across the stage. Paired with sweeping water sleeve movements in white dresses accented by red and
-              blue, this performance is a breathtaking ode to classical Chinese dance artistry.</p>
+            <div class="act-badge">
+              <span class="lang-zh">古典艺术</span>
+              <span class="lang-en">Classical Art</span>
+            </div>
+            <h3 class="act-title">
+              <span class="lang-zh">扇舞翩翩</span>
+              <span class="lang-en">Fan & Sleeve Dance</span>
+            </h3>
+            <h4 class="act-subtitle">
+              <span class="lang-zh">扇舞翩翩</span>
+              <span class="lang-en">Fan & Sleeve Dance</span>
+            </h4>
+            <p class="act-desc">
+              <span class="lang-zh">压轴戏在引人入胜的扇舞中拉开帷幕 —
+                巨大的丝质扇面在舞台上如波浪般绽放翻滚。伴随着由白底红蓝点缀的长裙所展现出的大气磅礴的水袖舞动，这场表演无疑是一次对中国古典舞蹈艺术令人叹为观止的颂赞。</span>
+              <span class="lang-en">The finale unfolds with masterful fan work — large silk fans bloom open and cascade
+                in waves across the stage. Paired with sweeping water sleeve movements in white dresses accented by red
+                and blue, this performance is a breathtaking ode to classical Chinese dance artistry.</span>
+            </p>
             <div class="act-details">
-              <span class="act-detail-tag">🪭 Silk Fans</span>
-              <span class="act-detail-tag">🤍 White & Red Accents</span>
-              <span class="act-detail-tag">🎭 Classical Dance</span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">🪭 丝绸扇</span>
+                <span class="lang-en">🪭 Silk Fans</span>
+              </span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">🤍 白红点缀</span>
+                <span class="lang-en">🤍 White & Red Accents</span>
+              </span>
+              <span class="act-detail-tag">
+                <span class="lang-zh">🎭 古典舞</span>
+                <span class="lang-en">🎭 Classical Dance</span>
+              </span>
             </div>
           </div>
           <div class="act-visual act-visual--gold">
@@ -212,41 +362,73 @@
   <section class="tickets-section" id="tickets">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">门票购买</div>
-        <h2 class="section-title">Purchase Tickets</h2>
-        <p class="section-subtitle">Secure your seats for the 2026 Year of the Horse Gala</p>
+        <div class="section-tag">
+          <span class="lang-zh">门票购买</span>
+          <span class="lang-en">Purchase Tickets</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-zh">购买门票</span>
+          <span class="lang-en">Purchase Tickets</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-zh">预订您的2026马年新春演出席位</span>
+          <span class="lang-en">Secure your seats for the 2026 Year of the Horse Gala</span>
+        </p>
       </div>
 
       <div class="checkout-container">
         <!-- Ticket Selection -->
         <div class="ticket-summary">
-          <h3>Order Summary</h3>
+          <h3>
+            <span class="lang-zh">订单摘要</span>
+            <span class="lang-en">Order Summary</span>
+          </h3>
           <div class="order-item">
-            <span>General Admission</span>
+            <span>
+              <span class="lang-zh">普通票</span>
+              <span class="lang-en">General Admission</span>
+            </span>
             <span>$45.00</span>
           </div>
           <div class="order-item">
-            <span>VIP Seating</span>
+            <span>
+              <span class="lang-zh">贵宾席</span>
+              <span class="lang-en">VIP Seating</span>
+            </span>
             <span>$85.00</span>
           </div>
           <div class="order-total">
-            <span>Total</span>
+            <span>
+              <span class="lang-zh">总计</span>
+              <span class="lang-en">Total</span>
+            </span>
             <span>$0.00</span>
           </div>
-          <p class="ticket-note">Please select your ticket quantity on the left. All sales are final.</p>
+          <p class="ticket-note">
+            <span class="lang-zh">请在左侧选择您的门票数量。所有票品一经售出，概不退换。</span>
+            <span class="lang-en">Please select your ticket quantity on the left. All sales are final.</span>
+          </p>
         </div>
 
-        <!-- Payment Form -->
         <form class="payment-form" id="paymentForm">
-          <h3>Payment Details</h3>
+          <h3>
+            <span class="lang-zh">付款详情</span>
+            <span class="lang-en">Payment Details</span>
+          </h3>
 
           <div class="form-group">
-            <label for="cardName">Name on Card</label>
+            <label for="cardName">
+              <span class="lang-zh">持卡人姓名</span>
+              <span class="lang-en">Name on Card</span>
+            </label>
             <input type="text" id="cardName" placeholder="e.g. John Doe" required>
           </div>
 
           <div class="form-group">
-            <label for="cardNumber">Card Number</label>
+            <label for="cardNumber">
+              <span class="lang-zh">信用卡卡号</span>
+              <span class="lang-en">Card Number</span>
+            </label>
             <div class="input-with-icon">
               <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
               <span class="card-icon">💳</span>
@@ -255,17 +437,24 @@
 
           <div class="form-row">
             <div class="form-group half">
-              <label for="cardExpiry">Expiry (MM/YY)</label>
+              <label for="cardExpiry">
+                <span class="lang-zh">有效期 (MM/YY)</span>
+                <span class="lang-en">Expiry (MM/YY)</span>
+              </label>
               <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5" required>
             </div>
             <div class="form-group half">
-              <label for="cardCvc">CVC</label>
+              <label for="cardCvc">
+                <span class="lang-zh">安全码 CVC</span>
+                <span class="lang-en">CVC</span>
+              </label>
               <input type="text" id="cardCvc" placeholder="123" maxlength="4" required>
             </div>
           </div>
 
           <button type="submit" class="submit-btn" id="submitPaymentBtn">
-            Pay Now <span id="payAmountBtnText"></span>
+            <span class="lang-zh">立即付款 <span id="payAmountBtnTextZh"></span></span>
+            <span class="lang-en">Pay Now <span id="payAmountBtnTextEn"></span></span>
           </button>
         </form>
       </div>
@@ -276,16 +465,37 @@
   <section class="gallery-section" id="gallery">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">精彩回顾</div>
-        <h2 class="section-title">Performance Gallery</h2>
-        <p class="section-subtitle">Captured moments from the 2026 New Year Gala — February 7–8</p>
+        <div class="section-tag">
+          <span class="lang-zh">精彩回顾</span>
+          <span class="lang-en">Performance Gallery</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-zh">精彩回顾</span>
+          <span class="lang-en">Performance Gallery</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-zh">重温2026新春演出的精彩瞬间 — 2月7日至8日</span>
+          <span class="lang-en">Captured moments from the 2026 New Year Gala — February 7–8</span>
+        </p>
       </div>
 
       <div class="gallery-filters" role="tablist">
-        <button class="filter-btn active" data-filter="all" role="tab">All 全部</button>
-        <button class="filter-btn" data-filter="sleeve" role="tab">Sleeve Dance 长袖舞</button>
-        <button class="filter-btn" data-filter="lantern" role="tab">Lantern Dance 灯笼舞</button>
-        <button class="filter-btn" data-filter="fan" role="tab">Fan Dance 扇舞</button>
+        <button class="filter-btn active" data-filter="all" role="tab">
+          <span class="lang-zh">全部</span>
+          <span class="lang-en">All</span>
+        </button>
+        <button class="filter-btn" data-filter="sleeve" role="tab">
+          <span class="lang-zh">长袖舞</span>
+          <span class="lang-en">Sleeve Dance</span>
+        </button>
+        <button class="filter-btn" data-filter="lantern" role="tab">
+          <span class="lang-zh">灯笼舞</span>
+          <span class="lang-en">Lantern Dance</span>
+        </button>
+        <button class="filter-btn" data-filter="fan" role="tab">
+          <span class="lang-zh">扇舞</span>
+          <span class="lang-en">Fan Dance</span>
+        </button>
       </div>
 
       <div class="gallery-grid" id="galleryGrid">
@@ -293,9 +503,14 @@
       </div>
 
       <div class="gallery-source">
-        <p>📸 Full photo album available on <a
-            href="https://1drv.ms/a/c/59d5233fde0a1292/IgDm9cy3ZoCfTrFjH7hw_Z0wAazQ6bXKAzQyrQAPqWmcy9c?e=sxQACO"
-            target="_blank" rel="noopener">OneDrive ↗</a></p>
+        <p>
+          <span class="lang-zh">📸 完整相册请访问 <a
+              href="https://1drv.ms/a/c/59d5233fde0a1292/IgDm9cy3ZoCfTrFjH7hw_Z0wAazQ6bXKAzQyrQAPqWmcy9c?e=sxQACO"
+              target="_blank" rel="noopener">OneDrive ↗</a></span>
+          <span class="lang-en">📸 Full photo album available on <a
+              href="https://1drv.ms/a/c/59d5233fde0a1292/IgDm9cy3ZoCfTrFjH7hw_Z0wAazQ6bXKAzQyrQAPqWmcy9c?e=sxQACO"
+              target="_blank" rel="noopener">OneDrive ↗</a></span>
+        </p>
       </div>
     </div>
   </section>
@@ -313,16 +528,27 @@
           <span class="logo-zh-lg">马年新春演出</span>
           <span class="logo-year">2026</span>
         </div>
-        <p class="footer-tagline">马到成功 · 新春快乐</p>
-        <p class="footer-tagline-en">Wishing you success and a Happy New Year!</p>
+        <p class="footer-tagline">
+          <span class="lang-zh">马到成功 · 新春快乐</span>
+          <span class="lang-en">Wishing you success and a Happy New Year!</span>
+        </p>
         <div class="footer-meta">
-          <span>February 7–8, 2026</span>
+          <span>
+            <span class="lang-zh">2026年2月7日 – 8日</span>
+            <span class="lang-en">February 7–8, 2026</span>
+          </span>
           <span>·</span>
-          <span>Year of the Horse 🐴</span>
+          <span>
+            <span class="lang-zh">马年 🐴</span>
+            <span class="lang-en">Year of the Horse 🐴</span>
+          </span>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>2026马年新春演出 · All Rights Reserved</p>
+        <p>
+          <span class="lang-zh">2026马年新春演出 · 保留所有权利</span>
+          <span class="lang-en">2026 Year of the Horse Gala · All Rights Reserved</span>
+        </p>
       </div>
     </div>
   </footer>
