@@ -736,6 +736,165 @@ img {
   }
 }
 
+/* ---- Tickets Checkout ---- */
+.tickets-section {
+  padding: 120px 0;
+  background: linear-gradient(180deg, rgba(26, 5, 10, 0.8) 0%, rgba(10, 5, 7, 0.95) 100%);
+  position: relative;
+}
+
+.checkout-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  background: var(--dark-card);
+  border: 1px solid rgba(212, 160, 23, 0.15);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ticket-summary {
+  background: rgba(192, 57, 43, 0.05);
+  padding: 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-summary h3,
+.payment-form h3 {
+  font-family: var(--font-zh);
+  font-size: 1.4rem;
+  color: var(--white);
+  margin-bottom: 30px;
+  letter-spacing: 0.04em;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0 16px;
+  color: var(--gold-light);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.ticket-note {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 24px;
+  line-height: 1.5;
+}
+
+.payment-form {
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+.payment-form label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-family: var(--font-en);
+  font-size: 1rem;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.payment-form input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(212, 160, 23, 0.05);
+}
+
+.payment-form input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.card-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  margin-top: 16px;
+  background: linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(192, 57, 43, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
 /* ---- Gallery ---- */
 .gallery-section {
   padding: 120px 0;
