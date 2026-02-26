@@ -123,24 +123,25 @@ img {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-.logo-zh {
-  font-family: var(--font-zh);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 0.05em;
+.ocoa-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 160, 23, 0.3);
+  box-shadow: 0 0 15px rgba(212, 160, 23, 0.2);
+  transition: all var(--transition);
+  flex-shrink: 0;
+  background-color: #fff;
 }
 
-.logo-en {
-  font-family: var(--font-en);
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: var(--text-muted);
-  letter-spacing: 0.2em;
+.ocoa-logo:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 25px rgba(212, 160, 23, 0.4);
+  transform: scale(1.05);
 }
 
 .nav-links {
@@ -1107,27 +1108,31 @@ img {
 .footer-content {
   text-align: center;
   padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo-zh-lg {
-  display: block;
-  font-family: var(--font-zh);
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: var(--gold);
-  letter-spacing: 0.08em;
-  margin-bottom: 6px;
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 
-.logo-year {
-  display: block;
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(212, 160, 23, 0.2);
-  letter-spacing: 0.1em;
-  margin-bottom: 20px;
-  line-height: 1;
+.ocoa-logo-footer {
+  height: 90px;
+  width: auto;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 160, 23, 0.4);
+  box-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
+  transition: all var(--transition);
+  background-color: white;
+}
+
+.ocoa-logo-footer:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(212, 160, 23, 0.6);
+  transform: scale(1.05);
 }
 
 .footer-tagline {
