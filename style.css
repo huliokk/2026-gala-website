@@ -1369,4 +1369,10 @@ img {
   .act-content {
     padding: 28px 20px;
   }
+
+  .ocoa-logo {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
 }
