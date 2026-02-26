@@ -129,7 +129,8 @@ img {
 
 .ocoa-logo {
   height: 48px;
-  width: auto;
+  width: 48px;
+  object-fit: contain;
   border-radius: 50%;
   border: 2px solid rgba(212, 160, 23, 0.3);
   box-shadow: 0 0 15px rgba(212, 160, 23, 0.2);
@@ -1121,12 +1122,13 @@ img {
 
 .ocoa-logo-footer {
   height: 90px;
-  width: auto;
+  width: 90px;
+  object-fit: contain;
   border-radius: 50%;
   border: 2px solid rgba(212, 160, 23, 0.4);
   box-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
   transition: all var(--transition);
-  background-color: white;
+  background-color: #fff;
 }
 
 .ocoa-logo-footer:hover {
